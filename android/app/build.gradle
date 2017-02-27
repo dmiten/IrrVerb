@@ -2,6 +2,7 @@ apply plugin: "com.android.application"
 
 import com.android.build.OutputFile
 
+
 import groovy.json.JsonSlurper
 
 def getNpmVersion() {
@@ -14,6 +15,7 @@ def getGitVersion() {
     def process = "git rev-list master --first-parent --count".execute()
     return process.text.toInteger()
 }
+
 
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
@@ -95,8 +97,10 @@ def enableSeparateBuildPerCPUArchitecture = false
  */
 def enableProguardInReleaseBuilds = false
 
-def userVer = getNpmVersion()
+
 def googleVer = getGitVersion()
+def userVer = getNpmVersion()
+
 
 android {
     compileSdkVersion 23
@@ -106,7 +110,7 @@ android {
         applicationId "com.irrverb"
         minSdkVersion 16
         targetSdkVersion 22
-        versionCode googleVer
+        versionCode 1
         versionName userVer
         ndk {
             abiFilters "armeabi-v7a", "x86"

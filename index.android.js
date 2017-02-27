@@ -121,7 +121,7 @@ class SearchInput extends Component {
         <TextInput
             style={styles.searchInput}
             maxLength={20}
-            placeholder='поиск глагола'
+            placeholder='поиск глагола eng'
             placeholderTextColor={'#b0bec5'}
             underlineColorAndroid='transparent'
             returnKeyType='done'
