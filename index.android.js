@@ -59,25 +59,24 @@ class FilteredTable extends Component {
   updateDataSource(props) {
     let dataBlob = [],
         rowId = [],
-        toSearch = props.toSearch,
-        isContainsToSearch = (verb, toSearch) => {
+        isContainsToSearch = (verb) => {
           return (
-              !((verb.firstForm.indexOf(toSearch))
-              && (verb.secondForm.indexOf(toSearch))
-              && (verb.thirdForm.indexOf(toSearch)))
+              !((verb.firstForm.indexOf(props.toSearch))
+              && (verb.secondForm.indexOf(props.toSearch))
+              && (verb.thirdForm.indexOf(props.toSearch)))
           )
+        },
+        makedataBlob = (verb) => {
+          dataBlob[String(verb.id)] = {
+            id: verb.id,
+            firstForm: verb.firstForm,
+            secondForm: verb.secondForm,
+            thirdForm: verb.thirdForm
+          };
+          rowId.push(verb.id)
         };
-    VERBS.map((verb) => {
-      if (isContainsToSearch(verb, toSearch)) {
-        dataBlob[String(verb.id)] = {
-          id: verb.id,
-          firstForm: verb.firstForm,
-          secondForm: verb.secondForm,
-          thirdForm: verb.thirdForm
-        };
-        rowId.push(verb.id)
-      }
-    });
+    VERBS.filter((verb) => isContainsToSearch(verb)).map(
+        (verb) => makedataBlob(verb));
     this.setState(
         {dataSource: this.state.dataSource.cloneWithRows(dataBlob, rowId)});
   }
