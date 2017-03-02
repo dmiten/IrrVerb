@@ -156,15 +156,16 @@ class DetailsInModal extends Component {
     return (nextProps.detailsInModal !== this.props.detailsInModal)
   }
 
-  touchToSpeak = (verb, form) => {
+  touchToSpeak = (form) => {
     return (
         <TouchableOpacity
             key={form}
-            onPress={() => Tts.speak(verb[form])}>
+            onPress={() => Tts.speak(this.props.pressedVerb[form])}>
           <View style={styles.rowInModal}>
-            <Text style={styles.verbForms}>{verb[form]}</Text>
+            <Text style={styles.verbForms}>{this.props.pressedVerb[form]}</Text>
             <Text style={styles.transcriptionInModal}>
-              {verb[form + 'Transcription'] + '   \uD83D\uDD0A'}
+              {this.props.pressedVerb[form + 'Transcription']
+              + '   \uD83D\uDD0A'}
             </Text>
           </View>
         </TouchableOpacity>
@@ -172,7 +173,6 @@ class DetailsInModal extends Component {
   };
 
   render() {
-    let verb = this.props.pressedVerb;
     return (
         <Modal
             animationType='slide'
@@ -181,12 +181,12 @@ class DetailsInModal extends Component {
             onRequestClose={() => this.props.toggleModalParent()}>
           <View style={styles.modal}>
             <View style={styles.verbFormsInModal}>
-              {this.touchToSpeak(verb, 'firstForm')}
-              {this.touchToSpeak(verb, 'secondForm')}
-              {this.touchToSpeak(verb, 'thirdForm')}
+              {this.touchToSpeak('firstForm')}
+              {this.touchToSpeak('secondForm')}
+              {this.touchToSpeak('thirdForm')}
             </View>
             <Text style={styles.translationInModal}>
-              {verb.translation}
+              {this.props.pressedVerb.translation}
             </Text>
             <TouchableOpacity onPress={() => this.props.toggleModalParent()}>
               <Text style={styles.okButton}>ok</Text>
