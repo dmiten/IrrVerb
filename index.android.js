@@ -61,9 +61,9 @@ class FilteredTable extends Component {
         rowId = [],
         isContainsToSearch = (verb) => {
           return (
-              !((verb.firstForm.indexOf(props.toSearch))
-              && (verb.secondForm.indexOf(props.toSearch))
-              && (verb.thirdForm.indexOf(props.toSearch)))
+              !(verb.firstForm.indexOf(props.toSearch)
+              && verb.secondForm.indexOf(props.toSearch)
+              && verb.thirdForm.indexOf(props.toSearch))
           )
         },
         makedataBlob = (verb) => {
