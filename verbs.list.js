@@ -77,8 +77,8 @@ const VERBS = [
     id: 7,
     firstForm: 'be',
     firstFormTranscription: '[bˈiː]',
-    secondForm: 'was / were',
-    secondFormTranscription: '[wˈɒz] / [wˈeəː]',
+    secondForm: 'was  (were)',
+    secondFormTranscription: '[wˈɒz]  [wˈeəː]',
     thirdForm: 'been',
     thirdFormTranscription: '[bˈiːn]',
     translation: 'быть'
