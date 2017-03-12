@@ -50,6 +50,10 @@ class FilteredTable extends Component {
     this.updateDataSource(this.props)
   }
 
+  shouldComponentUpdate(nextProps) {
+    return (nextProps.toSearch !== this.props.toSearch)
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.toSearch !== this.props.toSearch) {
       this.updateDataSource(nextProps)
