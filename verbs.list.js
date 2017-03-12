@@ -1185,8 +1185,8 @@ const VERBS = [
   },
   {
     id: 118,
-    firstForm: 'have / has',
-    firstFormTranscription: '[hˈæv] / [hˈæz]',
+    firstForm: 'have  (has)',
+    firstFormTranscription: '[hˈæv]  [hˈæz]',
     secondForm: 'had',
     secondFormTranscription: '[hˈæd]',
     thirdForm: 'had',
