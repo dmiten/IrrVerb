@@ -735,8 +735,8 @@ const VERBS = [
   },
   {
     id: 73,
-    firstForm: 'do / does',
-    firstFormTranscription: '[dˈuː] / [dˈʌz]',
+    firstForm: 'do (does)',
+    firstFormTranscription: '[dˈuː]   [dˈʌz]',
     secondForm: 'did',
     secondFormTranscription: '[dˈɪd]',
     thirdForm: 'done',
